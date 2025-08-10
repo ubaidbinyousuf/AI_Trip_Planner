@@ -1,10 +1,24 @@
+from flask import Flask, send_from_directory
+import os
+
+app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
+
+@app.route('/')
+def serve_react():
+    return send_from_directory(app.static_folder, 'index.html')
+
+# Keep your existing API routes here
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import google.generativeai as genai
 
 app = Flask(__name__)
 CORS(app)
-
+'hello check the push '
 # --- Configure Gemini API ---
 GEMINI_API_KEY = "AIzaSyAu91Oq1tTeUAuuxKrA9crZTshWu8-o6z0" #  YOUR API KEY HERE
 genai.configure(api_key=GEMINI_API_KEY)
