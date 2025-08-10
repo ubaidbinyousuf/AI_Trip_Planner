@@ -7,7 +7,7 @@ CORS(app)
 
 # --- Configure Gemini API ---
 GEMINI_API_KEY = "AIzaSyAu91Oq1tTeUAuuxKrA9crZTshWu8-o6z0" #  YOUR API KEY HERE
-genai.configure(api_key=GEMINI_API_KEY) mera name hai ubaid
+genai.configure(api_key=GEMINI_API_KEY)
 
 model = genai.GenerativeModel('gemini-2.5-pro') # Will be changed after we find correct model
 
